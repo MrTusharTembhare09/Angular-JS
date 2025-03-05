@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Helloworld';
-  
+
   // Defining the BridgeLabz Logo URL
   bridgeLabzLogo: string = 'https://images.yourstory.com/cs/images/companies/logo-1586419574337.jpg?fm=auto&ar=1%3A1&mode=fill&fill=solid&fill-color=fff&format=auto&w=384&q=75';
+  
+  // Function to open BridgeLabz site in a new tab
+  openBridgeLabzSite(): void {
+    window.open('https://www.bridgelabz.com', '_blank');
+  }
 }
+
 
