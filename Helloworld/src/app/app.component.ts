@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgIf, NgFor, NgClass, NgStyle } from '@angular/common';
+import { NgIf, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,13 +7,20 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [NgIf, NgFor, NgClass, NgStyle, FormsModule] // Enable FormsModule here
+  imports: [NgIf, NgClass, FormsModule] // Enable FormsModule here
 })
 export class AppComponent {
   title = 'Helloworld';
 
   // Property to hold user input
   userName: string = '';
+
+  // Method to validate user input
+  isValidUserName(): boolean {
+    const namePattern = /^[A-Z][a-zA-Z]{2,}$/;
+    return namePattern.test(this.userName);
+  }
 }
+
 
 

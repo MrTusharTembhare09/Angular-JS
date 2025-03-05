@@ -1,9 +1,16 @@
-<!-- Input field for user name -->
 <h1>Welcome to BridgeLabz</h1>
+
+<!-- Input field for user name -->
 <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
 
-<!-- Displaying the message dynamically -->
-<h2>Hello from BridgeLabz{{ userName ? ', ' + userName : '' }}!</h2>
+<!-- Error message if the input is invalid -->
+<p *ngIf="userName && !isValidUserName()" class="error">
+  ❌ Name should start with a capital letter and have at least 3 characters.
+</p>
+
+<!-- Display greeting only if the name is valid -->
+<h2 *ngIf="isValidUserName()">Hello from BridgeLabz, {{ userName }}!</h2>
+
 
 
 
